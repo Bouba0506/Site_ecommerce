@@ -1,9 +1,20 @@
 import React from 'react'
-// import products from '../../assets/data/products'
-// import chss from "../../assets/images/arm-chair-03.jpg"
 import { motion } from 'framer-motion'
+import { useDispatch } from "react-redux"
+import { addItem } from "../../Redux/Slices/Cartslice"
+import { toast } from 'react-toastify';
+
 const Serprod = ({item}) => {
-    
+  const dispatch = useDispatch()
+  const addTocart = () => {
+    dispatch(addItem({
+      id: item.id,
+      productName: item.productName,
+      price: item.price,
+      image: item.imgUrl
+    }))
+   toast.success("Produit ajouter avec succes")
+  }
   return (
      
             
@@ -14,7 +25,7 @@ const Serprod = ({item}) => {
             <span className='px-5'>{item.category}</span>
                <div className='flex w-full items-center justify-between px-5 pb-3'>
                 <p className='font-bold'>${item.price}</p>
-               <motion.div whileHover={{scale:0.9}} className=' bg-black p-1 flex items-center justify-center  h-8 w-8 text-xl text-white rounded-full'><i class="ri-add-line"></i></motion.div>
+               <motion.div whileHover={{scale:0.9}} onClick={addTocart} className=' bg-black p-1 flex items-center justify-center  h-8 w-8 text-xl text-white rounded-full'><i class="ri-add-line"></i></motion.div>
                </div>
         </div>
        

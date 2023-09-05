@@ -2,17 +2,29 @@ import React, { useEffect, useState } from 'react'
 import hero from "../assets/images/hero-img.png"
 import { Link } from 'react-router-dom'
 import { Service } from '../Components/Services/Service'
-import Serprdlist from '../Components/Serviceprod/Serprdlist'
+import Serprdlist from '../Components/ProduitTendance/Serprdlist'
 import products from "../assets/data/products"
 import Servmeublist from '../Components/Meubles/Servmeublist'
+import Populairlist from '../Components/Prodwacth/Populairlist'
+import { Phoneliste } from '../Components/Phones/Phoneliste'
+
 const Home = () => {
+  
   const[data,setData]=useState([])
   const[Sells,setSells]=useState([])
+  const[phone,setPhone]=useState([])
+  const[watch,setWatch]=useState([])
+
   useEffect(()=>{
     const filteProd=products.filter((item)=>item.category==="chair");
     const filtesels=products.filter((item)=>item.category==="sofa");
-    setSells(filtesels);
+    const filphone=products.filter((item)=>item.category==="mobile");
+    const filwatch=products.filter((item)=>item.category==="watch");
+
     setData(filteProd);
+    setSells(filtesels);
+    setPhone(filphone);
+    setWatch(filwatch)
   },[])
   const ann= new Date().getFullYear()
   return (
@@ -27,7 +39,7 @@ const Home = () => {
         <button className='p-2 rounded-sm w-28 bg-black text-white hover:translate-y-1 duration-500'><Link to="/shop"> Shop Now</Link></button>
         </div>
         {/* ----------right------------------- */}
-        <div className='hidden md:flex w-[30%]'>
+        <div className='hidden md:flex w-[40%] '>
           <img src={hero} alt="" />
         </div>
       </div>
@@ -42,6 +54,16 @@ const Home = () => {
       <div className='mt-16'>
       <h2 className='text-center '>Best sells in {ann}</h2>
       <Servmeublist Sells={Sells} />
+      </div>
+       {/* -------------------Phone---------------- */}
+       <div className='mt-16'>
+      <h2 className='text-center '>New arrival in {ann}</h2>
+      <Phoneliste phone={phone}/>
+      </div>
+       {/* -------------------produitpopulairewatch---------------- */}
+       <div className='mt-16'>
+      <h2 className='text-center '>Produit Populaire en {ann}</h2>
+      <Populairlist watch={watch}/>
       </div>
     </div>
   )

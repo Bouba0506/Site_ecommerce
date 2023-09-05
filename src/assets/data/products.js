@@ -530,7 +530,7 @@ const products = [
     id: "20",
     productName: "Beat Studio Wireless",
     imgUrl: productImg23,
-    category: "wireless",
+    category: "mobile",
     price: 199,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -553,7 +553,7 @@ const products = [
     id: "22",
     productName: "Beat EP Headphones",
     imgUrl: productImg25,
-    category: "wireless",
+    category: "mobile",
     price: 199,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",

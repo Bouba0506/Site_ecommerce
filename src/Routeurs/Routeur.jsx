@@ -11,7 +11,7 @@ export const Routeur = () => {
   return (
     <div>
         <Routes>
-            <Route path='home' element={<Home/>}/>
+            <Route path='/' element={<Home/>}/>
             <Route path='/login' element={<Login/>}/>
             <Route path='/shop' element={<Shop/>}/>
             <Route path='/signup' element={<Signup/>}/>
