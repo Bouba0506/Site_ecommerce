@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2? family= Playfair+Display:wght@500 & family= Poppins:ital,wght@0,400;1,300;1,400;1,600 & display=swap' );
+body{
+    font-family: 'Poppins', sans-serif;
+}
+/* .spn{
+    position: absolute;
+    top: -3px;
+    right: 65px;
+    width: 15px;
+    height: 15px;
+    content: "";
+    background-color: black;
+    color: #fff;
+    border-radius: 50%;
+    z-index: 10;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
